@@ -195,11 +195,13 @@ select {
     font-size: 28px;
     font-weight: bold;
     color: var(--color-dark);
+    margin-bottom: 15px;
 }
 
 .container .container-header p {
     font-size: 15px;
     color: var(--color-secondary);
+    padding: 5px;
 }
 
 .container .container-body {
@@ -265,6 +267,21 @@ select {
     padding: 6px 7px;
     border-radius: 5px;
     transition: all 0.40s ease-in-out;
+    margin-bottom: 5px;
+}
+
+.form .field-group .field.error {
+    border: 1px solid #e21313;
+}
+
+.form .field-group .danger {
+    color: #e21313 ;
+    font-size: 13px;
+    transition: all .10s;
+}
+
+.form .field-group .field.error:focus {
+    box-shadow: 0 0 4px rgba(226, 19, 19, 0.212);
 }
 
 .form .field-group .field:focus {
@@ -274,6 +291,21 @@ select {
 .form .field-group label {
     font-size: 14px;
     margin: 5px;
+}
+
+
+.form .button {
+    display: inline-block;
+    padding: 5px 8px;
+    background-color: var(--primary);
+    color: var(--color-light);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .40s;
+}
+
+.form .button:hover {
+    box-shadow: 0 0 10px var(--shadow-primary);
 }
 
 
@@ -301,8 +333,10 @@ select {
     width: 80%;
     height: 500px;
     margin-bottom: 20px;
-    margin-left: auto;
+    
+    
     margin-right: auto;
+    margin-left: auto;
 }
 
 .view .view-header {
@@ -329,10 +363,25 @@ select {
 
 .response p {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     padding: 10px 20px;
     color: var(--color-secondary);
     margin-bottom: 10px;
+}
+
+
+button.btn {
+    background-color: var(--primary);
+    padding: 8px 10px;
+    font-size: 15px;
+    color: var(--color-white);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+button.btn::first-letter {
+    text-transform: uppercase;
 }
 
 
@@ -340,4 +389,43 @@ select {
     .view {
         width: 100%;
     }
+}
+
+
+.responses {
+    display: flex;
+    column-gap: 10px;
+    width: 100%;
+}
+
+.responses .response {
+    width: 210px;
+    height: 300px;
+    overflow: auto;
+    box-shadow: 0 0 10px 1px var(--shadow-dark);
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.responses .response h3 {
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.responses .response .content {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+.responses .response .content h6 {
+    font-size: 15px;
+}
+
+.responses .response .content ul {
+    margin-left: 25px;
+    list-style-type: disc;
+    font-size: 14px;
 }

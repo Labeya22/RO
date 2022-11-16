@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./vendor/vis/dist/vis.min.css">
     <title>RO</title>
 </head>
 <body>
@@ -16,57 +17,52 @@
         <!-- navbar -->
         <div class="navbar" id="navbar">
             <ul>
-                <li><a href="">successeur</a></li>
-                <li><a href="">predecesseur</a></li>
-                <li class="dropdown">
-                    <a href="" class="active">degres</a>
-                    <ul>
-                        <li><a href="" class="active">démi degre exterieur</a></li>
-                        <li><a href="">démi degre interieur</a></li>
-                        <li><a href="">degré</a></li>
-                    </ul>
-                </li>
+                <li><a href="" class="active">graphe</a></li>
+                <li><a href="">aide</a></li>
             </ul>
         </div>
         <!-- end navbar -->
     </div>
-    <!-- progress -->
-    <div class="progress" id="progress"></div>
     <!-- end  -->
     <!-- end header -->
 
     <!-- container -->
     <div class="container">
         <div class="container-header">
-            <h2>Successeur</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, provident eum commodi quidem magnam perspiciatis eveniet tenetur repellendus, quaerat voluptatibus voluptates sit? Doloribus dolorem atque nisi, vel quae soluta eligendi.</p>
+            <h2>Graphe</h2>
+            <p>ensemble des couples (a, b) formés par un élément a d'un ensemble A et son image b par application de A dans B.</p>
         </div>
         <div class="container-body">
             <div class="d-flex mb-5">
-                <form class="form" action="" method="post">
+                <form class="form" action="" method="post" id="form-node">
                     <h5>Graphe</h5>
                     <div class="field-group">
                         <label for="length">taille</label>
-                        <input type="text" placeholder="taille" class="field" id="length">
+                        <input type="number" placeholder="taille" class="field" id="length">
+                        <div class="danger"></div>
                     </div>
-                    <div class="field-group">
-                        <label for="length">taille</label>
-                        <select name="" id="" class="field">
-                            <option value="">lettres</option>
-                            <option value="">nombres</option>
-                        </select>
-                    </div>
+                    <button class="button" type="submit" id="create">créer</button>
                 </form>
-                <form class="form" action="" method="post">
+                <form class="form" action="" method="post" id="form-relate">
                     <h5>Association</h5>
                     <div class="field-group">
                         <label for="de">de</label>
-                        <input type="text" placeholder="de..." class="field" id="de">
+                        <select class="field" id="from">
+                            <option value="">de...</option>
+                        </select>
+                        <div class="danger"></div>
+
                     </div>
                     <div class="field-group">
                         <label for="vers">vers</label>
-                        <input type="text" placeholder="vers..." class="field" id="vers">
+                        <select  class="field" id="to">
+                            <option value="">à...</option>
+
+                        </select>
+                        <div class="danger"></div>
+
                     </div>
+                    <button class="button" type="submit" id="add">ajouter</button>
                 </form>
             </div>
 
@@ -81,15 +77,33 @@
             </div>
             <!-- end graphe -->
             
-            <!-- response -->
-            <div class="response" id="response">
-                <h5>A : </h5>
-                <p>
-                    <strong>A</strong>
-                    <strong>V</strong>
-                </p>
+            <!-- result -->
+            <button class="btn" id="on">trouver</button>
+
+            <div class="responses" id="responses">
+                <div class="response" id="response-successor">
+                    <h3>successeurs</h3>
+                    
+                </div>
+                <div class="response" id="response-predecessor">
+                    <h3>prédecesseurs</h3>
+                    
+                </div>
+                <div class="response" id="response-neighbors">
+                    <h3>voisinnage</h3>
+                </div>
+                <div class="response" id="response-degreeinf">
+                    <h3>demi degré intérieur</h3>
+                </div>
+                <div class="response" id="response-degreeext">
+                    <h3>demi degré extérieur</h3>
+                </div>
+                <div class="response" id="response-degree">
+                    <h3>degrés</h3>
+                </div>
             </div>
-            <!-- end response -->
+        
+            
         </div>
 
     </div>
@@ -97,6 +111,7 @@
 
 
     <!-- js -->
+    <script src="./vendor/vis/dist/vis.js"></script>
     <script src="./js/app.js"></script>
 </body>
 </html>
